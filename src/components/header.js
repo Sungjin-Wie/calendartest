@@ -10,30 +10,28 @@ const useStyles = makeStyles({
   },
 });
 
+const HeaderButton = ({ href, css, value }) => {
+  return (
+    <div className={css.header}>
+      <Button href={href} variant='contained' color='primary'>
+        {value}
+      </Button>
+    </div>
+  );
+};
+
 const Header = () => {
   const css = useStyles();
   return (
     <div>
-      <div className={css.header}>
-        <Button href='#/' variant='contained' color='primary'>
-          Home
-        </Button>
-      </div>
-      {/* <div className={css.header}>
-        <Button href='#/rechart' variant='contained' color='primary'>
-          ReChart
-        </Button>
-      </div>
-      <div className={css.header}>
-        <Button href='#/nivo' variant='contained' color='primary'>
-          Nivo
-        </Button>
-      </div>
-      <div className={css.header}>
-        <Button href='#/bizchart' variant='contained' color='primary'>
-          BizChart
-        </Button>
-      </div> */}
+      <HeaderButton href='#/' css={css} value='Home' />
+      <HeaderButton href='#/react-calendar' css={css} value='React-Calendar' />
+      <HeaderButton
+        href='#/simple-react-calendar'
+        css={css}
+        value='Simple React-Calendar'
+      />
+      <HeaderButton href='#/datepicker' css={css} value='Date Picker' />
       <div style={{ clear: 'both' }}></div>
     </div>
   );
